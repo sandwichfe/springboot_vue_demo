@@ -6,10 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @CrossOrigin
 @RestController
@@ -66,6 +63,10 @@ public class FileController {
         }
         List<Map<String, String>> contents = new ArrayList<>();
         File file = new File(path);
+        // 不存在此路径直接返回空
+        if (!file.exists()){
+            return Collections.emptyList();
+        }
         File[] tempList = file.listFiles();
         Map<String, String> cont;
         for (int i = 0; i < tempList.length; i++) {
