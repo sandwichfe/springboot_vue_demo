@@ -19,7 +19,7 @@ public class FileController {
         List<Map<String, String>> contents = getContents(path);
         // keyword搜索
         if (StringUtils.hasText(keyword)){
-//            contents = queryByKeyWord(keyword,contents);
+            contents = queryByKeyWord(keyword,contents);
         }
         Map<String, Object> map = new HashMap<>();
         map.put("data", contents);
