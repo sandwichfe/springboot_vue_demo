@@ -136,5 +136,20 @@ public class FileServiceImpl implements FileService {
         return contents;
     }
 
-
+    @Override
+    public void mkdir(String path, String dirName) {
+        if (!StringUtils.hasText(path)|| !StringUtils.hasText(dirName)){
+            throw new RuntimeException("传个空参数干哈勒！");
+        }
+        String dirPath = path+File.separator+dirName;
+        File file = new File(dirPath);
+        if (file.exists()){
+            String fileType = file.isDirectory()?"文件夹":"文件";
+            throw new RuntimeException("当前目录已存在此"+fileType+"!");
+        }
+        boolean ret = file.mkdir();
+        if (!ret){
+            throw new RuntimeException("创建失败！");
+        }
+    }
 }

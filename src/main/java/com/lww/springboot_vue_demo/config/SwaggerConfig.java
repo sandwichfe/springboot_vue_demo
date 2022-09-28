@@ -1,4 +1,4 @@
-package com.lww.springboot_vue_demo.congif;
+package com.lww.springboot_vue_demo.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;

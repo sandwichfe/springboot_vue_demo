@@ -46,6 +46,15 @@ public class FileController {
         return map;
     }
 
+    @PutMapping("/mkdir")
+    public Map<String, Object> mkdir(String path,String dirName){
+        fileService.mkdir(path,dirName);
+        Map<String, Object> map = new HashMap<>();
+        map.put("msg", "创建成功!");
+        map.put("code", 200);
+        return map;
+    }
+
 }
 
 

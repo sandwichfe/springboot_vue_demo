@@ -38,4 +38,14 @@ public interface FileService {
      * @return
      */
     void renameFile(String path,String newName);
+
+    /**
+     * 创建文件夹
+     * @author lww
+     * @since 2022/9/28 13:43
+     * @param path
+	 * @param dirName
+     * @return
+     */
+    void mkdir(String path, String dirName);
 }
